@@ -10,9 +10,7 @@ app.secret_key = secrets.token_hex(16)
 @app.route('/')
 @app.route('/home')
 def home():
-    if 'username' not in session:
-        return redirect('/login')
-    return render_template('./Resume/index.html' , username = session['username'])
+    return render_template('./Resume/index.html')
 
 
 @app.route('/login')
