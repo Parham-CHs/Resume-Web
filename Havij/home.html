@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <!-- Load Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .banner-area {
+            background-image: url('https://images.unsplash.com/photo-1494500764479-0c8f2919a3d8?crop=entropy&cs=srgb&fm=jpg&ixid=MnwxNDU4OXwwfDF8cmFuZG9tfHx8fHx8fHx8MTYzNzU5MjE4OA&ixlib=rb-1.2.1&q=85');
+            background-position: center;
+            background-size: cover;
+            background-attachment: fixed;
+            height: 100vh;
+            width: 100%;
+        }
+
+        nav.menu {
+            float: right;
+            margin-top: 30px;
+        }
+
+        nav.menu ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav.menu ul li {
+            display: inline-block;
+        }
+
+        nav.menu ul li a {
+            color: #fff;
+            text-decoration: none;
+            padding: 0px 15px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 16px;
+        }
+
+        nav.menu ul li a:hover {
+            color: rgb(199, 139, 255);
+        }
+
+        .banner-text {
+            position: absolute;
+            width: 600px;
+            height: 300px;
+            margin: 20% 30%;
+            text-align: center;
+        }
+
+        .banner-text h1 {
+            color: rgb(233, 185, 255);
+            text-transform: uppercase;
+            font-size: 60px;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .banner-text p {
+            color: #fff;
+            font-size: 18px;
+        }
+
+        .banner-text a {
+            border: 1px solid #fff;
+            padding: 10px 25px;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 14px;
+            margin-top: 20px;
+            display: inline-block;
+            color: #fff;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .banner-text a:hover {
+            background-color: white;
+            color: rgba(68, 25, 109, 0.623);
+            font-weight: bold;
+        }
+
+        /* Log-out button */
+        .custom-btn {
+            width: 130px;
+            height: 40px;
+            color: #fff;
+            border-radius: 5px;
+            padding: 10px 25px;
+            font-family: 'Lato', sans-serif;
+            font-weight: 500;
+            background: transparent;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            display: inline-block;
+            box-shadow: inset 2px 2px 2px 0px rgba(255,255,255,.5),
+                        7px 7px 20px 0px rgba(0,0,0,.1),
+                        4px 4px 5px 0px rgba(0,0,0,.1);
+            outline: none;
+            text-align: center;
+        }
+
+        .btn-5 {
+            padding: 0; /* Ensure padding is reset */
+            line-height: 42px;
+            border: none;
+            background: rgb(255,27,0);
+            background: linear-gradient(0deg, rgba(255,27,0,1) 0%, rgba(251,75,2,1) 100%);
+        }
+
+        .btn-5:hover {
+            color: #f0094a;
+            background: transparent;
+            box-shadow: none;
+        }
+
+        .btn-5:before,
+        .btn-5:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            height: 2px;
+            width: 0;
+            background: #f0094a;
+            box-shadow:
+                -1px -1px 5px 0px #fff,
+                7px 7px 20px 0px #0003,
+                4px 4px 5px 0px #0002;
+            transition: 400ms ease all;
+        }
+
+        .btn-5:after {
+            right: inherit;
+            top: inherit;
+            left: 0;
+            bottom: 0;
+        }
+
+        .btn-5:hover:before,
+        .btn-5:hover:after {
+            width: 100%;
+            transition: 800ms ease all;
+        }
+
+        @media (max-width: 768px) {
+            .banner-text {
+                width: 80%;
+                margin: 30% auto;
+                font-size: smaller;
+            }
+
+            nav.menu ul li a {
+                font-size: 14px;
+                padding: 0px 15px;
+            }
+        }
+    </style>
+</head>
+
+<script>
+    function logout() {
+        // Clear localStorage or cookies
+        localStorage.clear(); // Clear all local storage data
+        document.cookie = "session=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;"; // Clear a specific cookie
+
+        // Redirect to login page
+        window.location.href = "/login";
+    }
+</script>
+
+
+<body>
+    <div class="banner-area">
+        <header>
+            <nav class="menu">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Portfolio</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a class="custom-btn btn-5" style="padding: 0; margin: 15px;" href="#" onclick="logout()">Log Out</a>
+                    </li>
+
+                </ul>
+            </nav>
+        </header>
+        <div class="banner-text">
+            <h1>HomePage Design</h1>
+        </div>
+    </div>
+</body>
+</html>
